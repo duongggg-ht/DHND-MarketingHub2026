@@ -52,6 +52,20 @@
   img{max-width:100%;display:block;}
   button{font-family:inherit;}
 
+  /* ===== Icons (monochrome only — red or white) ===== */
+  svg.ico{width:19px;height:19px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;display:block;}
+  .ico-badge{
+    width:34px;height:34px;flex:0 0 34px;border-radius:10px;
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--red-tint-08);color:var(--red);
+  }
+  .ico-badge.on-red{background:rgba(255,255,255,0.2);color:#fff;}
+  .ico-badge.sm{width:26px;height:26px;flex:0 0 26px;border-radius:8px;}
+  .ico-badge.sm svg.ico{width:15px;height:15px;}
+  .ico-inline{display:inline-flex;vertical-align:-4px;color:var(--red);margin-right:6px;}
+  .ico-inline svg.ico{width:16px;height:16px;}
+  .heading-with-icon{display:flex;align-items:center;gap:10px;}
+
   /* ===== Hero ===== */
   .hero{
     background:linear-gradient(135deg,var(--red) 0%, var(--red-dark) 100%);
@@ -426,10 +440,39 @@
 </head>
 <body>
 
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="i-landmark" viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V10"/><path d="M9 21V10"/><path d="M15 21V10"/><path d="M19 21V10"/><path d="M2 10l10-6 10 6"/></symbol>
+<symbol id="i-building" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></symbol>
+<symbol id="i-rocket" viewBox="0 0 24 24"><path d="M12 2c2 2 3 5 3 8 0 2-1 4-3 6-2-2-3-4-3-6 0-3 1-6 3-8Z"/><path d="M9 15l-3 5 4-2"/><path d="M15 15l3 5-4-2"/></symbol>
+<symbol id="i-cap" viewBox="0 0 24 24"><path d="M12 3 2 8l10 5 10-5-10-5Z"/><path d="M6 10.5V16c0 1.5 3 3 6 3s6-1.5 6-3v-5.5"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M21 20c0-2.6-1.8-4.8-4-5.5"/></symbol>
+<symbol id="i-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-8 8-8s8 3.6 8 8"/></symbol>
+<symbol id="i-briefcase" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M8 8V6a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 1 0-5.4 5.4L4 17l3 3 5.3-5.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2 2.5-2.5Z"/></symbol>
+<symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-7 4 14 2-7h6"/></symbol>
+<symbol id="i-monitor" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></symbol>
+<symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M9 12.5 7 21l5-3 5 3-2-8.5"/></symbol>
+<symbol id="i-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.5 6 3.5 9s-1 6.5-3.5 9c-2.5-2.5-3.5-6-3.5-9s1-6.5 3.5-9Z"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 5-3.5 8-7 9-3.5-1-7-4-7-9V6l7-3Z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-dollar" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 6v12M15 9c0-1.5-1.3-2.5-3-2.5S9 7.5 9 9s1.3 2 3 2.5 3 1 3 2.5-1.3 2.5-3 2.5-3-1-3-2.5"/></symbol>
+<symbol id="i-video" viewBox="0 0 24 24"><rect x="2" y="6" width="14" height="12" rx="2"/><path d="M16 10l6-3v10l-6-3"/></symbol>
+<symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3 11c1 .7 1 1.5 1 2h4c0-.5 0-1.3 1-2a6 6 0 0 0-3-11Z"/></symbol>
+<symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></symbol>
+<symbol id="i-file" viewBox="0 0 24 24"><path d="M6 3h8l4 4v14H6Z"/><path d="M14 3v4h4"/><path d="M9 13h6M9 17h6"/></symbol>
+<symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-11.5a7 7 0 1 0-14 0C5 14.5 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.3"/></symbol>
+<symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h4l1.5 4.5-2 1.5a12 12 0 0 0 5.5 5.5l1.5-2 4.5 1.5v4c0 1-1 1.5-2 1.5C11 20.5 3.5 13 3.5 6c0-1 .5-2 1.5-2Z"/></symbol>
+<symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9h18M12 9v12"/><path d="M9 9c-1.5-3 1-5 3-3 2-2 4.5 0 3 3"/></symbol>
+<symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></symbol>
+</defs>
+</svg>
+
 <div class="hero">
   <div class="hero-inner">
     <span class="hero-eyebrow">Chiến lược truyền thông 2026</span>
     <h1>Chiến lược Truyền thông<br>Du học nghề Đức 2026</h1>
+    <p class="sub">Xây dựng vị thế dẫn đầu trong kỷ nguyên số và công nghệ xanh.</p>
     <div class="hero-brand"><span class="dot"></span> PHUONG NAM EDUCATION</div>
   </div>
 </div>
@@ -625,7 +668,7 @@
           <div class="quote-card" data-cat="hoso">"Sợ gặp phải trung tâm 'ma', đóng tiền xong rồi lặn mất tăm hoặc vẽ thêm chi phí phát sinh."</div>
 
           <div class="quote-card" data-cat="cuocsong">"Sang đó có ai đón không? Có chỗ ở tử tế không hay lại bắt tự bơi?"</div>
-          <div class="quote-card" data-cat="cuocsong">"Lương thực tập có đủ ăn đủ mặc không hay lại phải đi làm thêm chui để trang trải?"</div>
+          <div class="quote-card" data-cat="cuocsong">"Lương thực tập có đủ ăn đủ mặc không hay lại phải đi làm thêm chui để trang trải?."</div>
           <div class="quote-card" data-cat="cuocsong">"Sợ cô đơn, sợ không hợp đồ ăn, sợ bị phân biệt đối xử."</div>
         </div>
       </div>
@@ -649,19 +692,20 @@
     <p class="section-lead" style="margin-bottom:20px;">Xác định vị thế cạnh tranh 2026</p>
     <div class="two-col">
       <div class="card-plain">
-        <h4>🏛 Nhóm "Cựu binh"</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-landmark"></use></svg></span> Nhóm "Cựu binh"</h4>
         <p><strong>CMMB, AVT, IECS:</strong> Uy tín học thuật cao, SEO mạnh. Tuy nhiên hình ảnh còn hàn lâm, khô khan, quy trình cồng kềnh và mảng Video ngắn (TikTok/Reels) còn yếu.</p>
       </div>
       <div class="card-plain">
-        <h4>🚀 Nhóm "Tân binh"</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-rocket"></use></svg></span> Nhóm "Tân binh"</h4>
         <p><strong>EduGo, SHD Academy:</strong> Thương hiệu trẻ trung, video viral mạnh. Điểm yếu là chăm sóc cá nhân hóa chưa tối ưu hoặc chỉ tập trung cục bộ tại một số khu vực.</p>
       </div>
     </div>
   </div>
 
-  <!-- Chi tiet doi thu 1 -->
+  <!-- Chi tiet doi thu (merged) -->
   <div class="section">
-    <div class="section-head"><h2>Chi tiết đối thủ: CMMB &amp; IECS</h2></div>
+    <div class="section-head"><h2>Chi tiết đối thủ cạnh tranh</h2></div>
+    <p class="section-lead" style="margin-bottom:20px;">CMMB, IECS, EduGo, SHD Academy &amp; AVT Group</p>
     <div class="comp-grid">
       <div class="comp-card">
         <div class="head"><h4>CMMB Việt Nam</h4><span>Community Building</span></div>
@@ -684,12 +728,8 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <!-- Chi tiet doi thu 2 -->
-  <div class="section">
-    <div class="section-head"><h2>Chi tiết đối thủ: EduGo, SHD &amp; AVT</h2></div>
-    <div class="comp-grid three">
+    <div class="comp-grid three" style="margin-top:var(--s3);">
       <div class="comp-card">
         <div class="head"><h4>EduGo Group</h4><span>Viral &amp; TikTok King</span></div>
         <div class="body">
@@ -778,31 +818,31 @@
     <div class="section-head"><h2>Phân khúc khách hàng chi tiết</h2></div>
     <div class="seg-grid">
       <div class="seg-card">
-        <div class="seg-ico">🎓</div>
+        <div class="seg-ico"><svg class="ico"><use href="#i-cap"></use></svg></div>
         <h4>1. Gen Z (18–22 tuổi)</h4>
         <p>Học sinh vừa tốt nghiệp THPT, không muốn học Đại học tại VN. Sợ thất nghiệp, áp lực đồng lứa.</p>
         <div class="kv">Kỳ vọng: đổi đời nhanh, có vị thế xã hội ("đi Châu Âu"), tự chủ tài chính sớm.</div>
       </div>
       <div class="seg-card">
-        <div class="seg-ico">👨‍👩‍👧</div>
+        <div class="seg-ico"><svg class="ico"><use href="#i-users"></use></svg></div>
         <h4>2. Phụ huynh (45–55 tuổi)</h4>
         <p>Sống tại đô thị hoặc tỉnh lân cận. Lo lắng con hư hỏng, sợ bị trung tâm lừa đảo/bào tiền.</p>
         <div class="kv">Kỳ vọng: con có tương lai ổn định, an toàn; cần trung tâm uy tín, có người quản lý con tại Đức.</div>
       </div>
       <div class="seg-card">
-        <div class="seg-ico">💼</div>
+        <div class="seg-ico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>
         <h4>3. Người đi làm (23–28 tuổi)</h4>
         <p>Nhân viên văn phòng kiệt sức (KPI, kẹt xe). Muốn chạy trốn hiện tại trước ngưỡng 30.</p>
         <div class="kv">Kỳ vọng: môi trường sống văn minh, cơ hội phát triển sự nghiệp thực chất, trải nghiệm thế giới.</div>
       </div>
       <div class="seg-card">
-        <div class="seg-ico">🛠</div>
+        <div class="seg-ico"><svg class="ico"><use href="#i-wrench"></use></svg></div>
         <h4>4. Lao động tự do</h4>
         <p>Công nhân, lao động phổ thông muốn nâng cao thu nhập. Sợ cuộc sống bấp bênh tại VN.</p>
         <div class="kv">Kỳ vọng: động lực kinh tế cực mạnh, muốn định cư lâu dài để bảo lãnh gia đình sau này.</div>
       </div>
       <div class="seg-card">
-        <div class="seg-ico">🩺</div>
+        <div class="seg-ico"><svg class="ico"><use href="#i-pulse"></use></svg></div>
         <h4>5. SV ngành Y / Kỹ thuật</h4>
         <p>Đang học hoặc đã tốt nghiệp Cao đẳng/Đại học nhưng lương thấp, môi trường làm việc vất vả.</p>
         <div class="kv">Kỳ vọng: nâng cao tay nghề chuẩn quốc tế, làm chủ công nghệ, hưởng mức lương xứng đáng.</div>
@@ -825,15 +865,15 @@
 
     <div class="trend-grid" style="margin-bottom:var(--s3);">
       <div class="trend-card">
-        <h4>🖥 Đào tạo tiếng Đức</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-monitor"></use></svg></span> Đào tạo tiếng Đức</h4>
         <p style="font-size:13.5px;">Chương trình tối ưu từ A1 đến B2, tập trung vào kỹ năng thực tế và giao tiếp chuyên ngành.</p>
       </div>
       <div class="trend-card">
-        <h4>📝 Tổ chức thi ÖSD</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-award"></use></svg></span> Tổ chức thi ÖSD</h4>
         <p style="font-size:13.5px;">Trạm thi ÖSD chính thức tại TP.HCM. Học tại chỗ, thi tại chỗ, bảo chứng tỷ lệ đỗ 97.3%.</p>
       </div>
       <div class="trend-card">
-        <h4>🌐 Xử lý hồ sơ trọn gói</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-globe"></use></svg></span> Xử lý hồ sơ trọn gói</h4>
         <p style="font-size:13.5px;">Quy trình minh bạch, cam kết không phát sinh chi phí, tỷ lệ đỗ Visa đạt mức tuyệt đối 100%.</p>
       </div>
     </div>
@@ -906,7 +946,7 @@
     <div class="section-head"><h2>Nhóm đối tượng bị bỏ trống &amp; giải pháp</h2></div>
     <div class="two-col">
       <div class="card-plain">
-        <h4>👤 Nhóm đối tượng đang bị bỏ trống</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-user"></use></svg></span> Nhóm đối tượng đang bị bỏ trống</h4>
         <ul>
           <li><strong>Nhóm Phụ huynh cần sự an tâm tài chính:</strong> Những người nắm giữ ngân sách nhưng chưa thấy được sự minh bạch tuyệt đối về phí.</li>
           <li><strong>Nhóm Kỹ thuật &amp; IT:</strong> Những người trẻ thực tế, yêu công nghệ nhưng thấy nội dung hiện tại quá "mềm mỏng", thiếu tính Tech.</li>
@@ -915,7 +955,7 @@
         </ul>
       </div>
       <div class="card-plain">
-        <h4>💡 Giải pháp đột phá nội dung</h4>
+        <h4 class="heading-with-icon"><span class="ico-badge sm"><svg class="ico"><use href="#i-bulb"></use></svg></span> Giải pháp đột phá nội dung</h4>
         <ul>
           <li><strong>Tuyến bài "Góc Phụ Huynh":</strong> Series giải đáp về an toàn, quản lý học viên tại Đức và cam kết tài chính sòng phẳng.</li>
           <li><strong>Series "Tech-Talk Du Học":</strong> Phân tích xu hướng công nghệ Đức, cơ hội việc làm ngành EV và IT.</li>
@@ -930,7 +970,7 @@
   <div class="section">
     <div class="section-head"><h2>Chiến thuật nội dung &amp; Lead Magnet</h2></div>
 
-    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">📅 Phân bổ theo tuần</h4>
+    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-calendar"></use></svg></span> Phân bổ theo tuần</h4>
     <div class="mini-grid" style="margin-bottom:var(--s3);">
       <div class="mini-card">
         <div class="mini-tag">Thứ 2 – Thứ 4</div>
@@ -948,9 +988,9 @@
         <p>Hình ảnh nhà ở, an toàn, hỗ trợ tài chính — lúc phụ huynh và con cái thảo luận.</p>
       </div>
     </div>
-    <div class="golden-hour">⏰ Khung giờ vàng: Reels (20:00–21:00) · Lead Magnet (09:00–10:00 Thứ 3/Thứ 5)</div>
+    <div class="golden-hour"><span class="ico-inline"><svg class="ico"><use href="#i-clock"></use></svg></span>Khung giờ vàng: Reels (20:00–21:00) · Lead Magnet (09:00–10:00 Thứ 3/Thứ 5)</div>
 
-    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;">🎁 Đề xuất Lead Magnet</h4>
+    <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span> Đề xuất Lead Magnet</h4>
     <div class="mini-grid four">
       <div class="mini-card">
         <div class="mini-tag">Gen Z &amp; Người đi làm</div>
@@ -979,37 +1019,37 @@
     <div class="section-head"><h2>06 Content Pillars 2026</h2></div>
     <div class="pillar-grid">
       <div class="pillar-card">
-        <div class="pico">🎬</div>
+        <div class="pico"><svg class="ico"><use href="#i-video"></use></svg></div>
         <h4>Người thật việc thật</h4>
         <p>Hành trình thực tế của học viên từ lúc nhập học đến khi bay và làm việc tại Đức.</p>
         <div class="tags"><span>Vlog tiễn bay</span><span>Review cuộc sống Đức</span></div>
       </div>
       <div class="pillar-card">
-        <div class="pico">✅</div>
+        <div class="pico"><svg class="ico"><use href="#i-award"></use></svg></div>
         <h4>Bảo chứng lộ trình</h4>
         <p>Đập tan nỗi sợ ngâm hồ sơ và trễ lộ trình bay bằng bảo chứng uy tín.</p>
         <div class="tags"><span>Học – Thi – Xử lý hồ sơ tại chỗ</span><span>Tỉ lệ đậu chứng chỉ 97,3%</span></div>
       </div>
       <div class="pillar-card">
-        <div class="pico">🛡</div>
+        <div class="pico"><svg class="ico"><use href="#i-shield"></use></svg></div>
         <h4>Lối thoát &amp; An tâm</h4>
         <p>Giải quyết triệt để các nỗi sợ về tương lai, hồ sơ và sự cô đơn nơi xứ người.</p>
         <div class="tags"><span>Quy trình 3 trong 1</span><span>Hỗ trợ 2 đầu Việt – Đức</span></div>
       </div>
       <div class="pillar-card">
-        <div class="pico">💼</div>
+        <div class="pico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>
         <h4>Hướng nghiệp thực dụng</h4>
         <p>Tư vấn ngành nghề theo xu hướng 2026: IT, Kỹ thuật xanh, Smart Nursing.</p>
         <div class="tags"><span>Phân tích thu nhập</span><span>Lộ trình thăng tiến</span></div>
       </div>
       <div class="pillar-card">
-        <div class="pico">💰</div>
+        <div class="pico"><svg class="ico"><use href="#i-dollar"></use></svg></div>
         <h4>Sòng phẳng tài chính</h4>
         <p>Minh bạch mọi khoản phí, cam kết không phát sinh bằng hợp đồng pháp lý.</p>
         <div class="tags"><span>Checklist chi phí</span><span>Cam kết hoàn tiền</span></div>
       </div>
       <div class="pillar-card">
-        <div class="pico">🖥</div>
+        <div class="pico"><svg class="ico"><use href="#i-monitor"></use></svg></div>
         <h4>Học thử tương tác</h4>
         <p>Trải nghiệm thực tế phương pháp đào tạo tiếng Đức hiện đại tại PNE.</p>
         <div class="tags"><span>Lớp học thử miễn phí</span><span>Hình ảnh lớp học thực tế</span><span>Từ vựng thú vị</span></div>
@@ -1022,10 +1062,10 @@
     <div class="two-col">
       <div class="card-plain">
         <ul>
-          <li>🏛 <strong>Trạm thi ÖSD chính thức tại TP.HCM:</strong> Học, thi và nhận chứng chỉ tại chỗ.</li>
-          <li>🏅 <strong>Bảo chứng chất lượng đào tạo</strong> với 97,3% học viên đỗ ÖSD lần đầu.</li>
-          <li>📄 <strong>Cam kết minh bạch,</strong> đảm bảo không phát sinh chi phí.</li>
-          <li>💡 <strong>An tâm tuyệt đối</strong> cùng thương hiệu 15 năm khép kín duy nhất tại TP.HCM.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-landmark"></use></svg></span><strong>Trạm thi ÖSD chính thức tại TP.HCM:</strong> Học, thi và nhận chứng chỉ tại chỗ.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-award"></use></svg></span><strong>Bảo chứng chất lượng đào tạo</strong> với 97,3% học viên đỗ ÖSD lần đầu.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-file"></use></svg></span><strong>Cam kết minh bạch,</strong> đảm bảo không phát sinh chi phí.</li>
+          <li><span class="ico-inline"><svg class="ico"><use href="#i-bulb"></use></svg></span><strong>An tâm tuyệt đối</strong> cùng thương hiệu 15 năm khép kín duy nhất tại TP.HCM.</li>
         </ul>
       </div>
       <div class="card-plain">
@@ -1047,7 +1087,7 @@
     <p class="section-lead" style="margin-bottom:24px;">Bấm vào từng angle để xem cách tiếp cận, tiêu đề gợi ý và điểm nhấn truyền thông.</p>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">🎬</div>Người thật việc thật</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-video"></use></svg></div>Người thật việc thật</div>
       <div class="angle-cards">
         <div class="expand-card">
           <div class="exp-head"><h4>Du học sinh PNE nhận Visa</h4><div class="chev">+</div></div>
@@ -1077,7 +1117,7 @@
     </div>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">✅</div>Bảo chứng lộ trình</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-award"></use></svg></div>Bảo chứng lộ trình</div>
       <div class="angle-cards">
         <div class="expand-card">
           <div class="exp-head"><h4>Rủi ro học một nơi, thi một nẻo</h4><div class="chev">+</div></div>
@@ -1107,7 +1147,7 @@
     </div>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">🛡</div>Lối thoát &amp; An tâm</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-shield"></use></svg></div>Lối thoát &amp; An tâm</div>
       <div class="angle-cards">
         <div class="expand-card">
           <div class="exp-head"><h4>Áp lực đồng trang lứa</h4><div class="chev">+</div></div>
@@ -1129,7 +1169,7 @@
     </div>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">💼</div>Hướng nghiệp thực dụng</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-briefcase"></use></svg></div>Hướng nghiệp thực dụng</div>
       <div class="angle-cards">
         <div class="expand-card">
           <div class="exp-head"><h4>Smart Nursing 4.0</h4><div class="chev">+</div></div>
@@ -1151,7 +1191,7 @@
     </div>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">💰</div>Sòng phẳng tài chính</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-dollar"></use></svg></div>Sòng phẳng tài chính</div>
       <div class="angle-cards">
         <div class="expand-card" style="grid-column:1 / -1;">
           <div class="exp-head"><h4>Nói không với mập mờ</h4><div class="chev">+</div></div>
@@ -1165,7 +1205,7 @@
     </div>
 
     <div class="angle-group">
-      <div class="angle-group-title"><div class="ico">🖥</div>Học thử tương tác</div>
+      <div class="angle-group-title"><div class="ico"><svg class="ico"><use href="#i-monitor"></use></svg></div>Học thử tương tác</div>
       <div class="angle-cards">
         <div class="expand-card">
           <div class="exp-head"><h4>Học thử tiếng Đức Online</h4><div class="chev">+</div></div>
@@ -1271,10 +1311,10 @@
 
         <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:22px 0 14px;">Footer mẫu (bắt buộc)</h4>
         <div class="footer-sample">
-          <div>📍 <strong>PHUONG NAM EDUCATION</strong> – Trạm thi ÖSD chính thức tại TP.HCM</div>
-          <div>🏢 Địa chỉ: 357 Lê Hồng Phong, Phường 2, Quận 10, TP.HCM</div>
-          <div>☎️ Hotline: 1900 7060 – 028 3622 8842</div>
-          <div>🌐 Website: duhocngheduc.com.vn</div>
+          <div><span class="ico-inline"><svg class="ico"><use href="#i-pin"></use></svg></span><strong>PHUONG NAM EDUCATION</strong> – Trạm thi ÖSD chính thức tại TP.HCM</div>
+          <div><span class="ico-inline"><svg class="ico"><use href="#i-building"></use></svg></span>Địa chỉ: 357 Lê Hồng Phong, Phường 2, Quận 10, TP.HCM</div>
+          <div><span class="ico-inline"><svg class="ico"><use href="#i-phone"></use></svg></span>Hotline: 1900 7060 – 028 3622 8842</div>
+          <div><span class="ico-inline"><svg class="ico"><use href="#i-globe"></use></svg></span>Website: duhocngheduc.com.vn</div>
         </div>
       </div>
       <div>
@@ -1320,20 +1360,45 @@
           <div class="swatch"><div class="chip" style="background:#FFFFFF;"></div><div><div class="name">Pure White (Nền)</div><div class="hex">#FFFFFF</div></div></div>
           <div class="swatch"><div class="chip" style="background:#1F1F1F;"></div><div><div class="name">Deep Grey (Chữ/Accent)</div><div class="hex">#1F1F1F</div></div></div>
           <div class="swatch"><div class="chip" style="background:#F5F5F5;"></div><div><div class="name">Light Grey (Phụ trợ)</div><div class="hex">#F5F5F5</div></div></div>
-          <div class="swatch"><div class="chip" style="background:#FFCC00;"></div><div class="info"><b>LightYellow (Phụ trợ)</b><span>#FFCC00</span></div></div>
+          <div class="swatch"><div class="chip" style="background:#FFCC00;"></div><div><div class="name">Light Yellow — vàng cờ Đức (Phụ trợ)</div><div class="hex">#FFCC00</div></div></div>
         </div>
       </div>
       <div>
         <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Gradient</h4>
-        <div class="grad-grid">
-         <div class="grad-tile"><div class="swimg" style="background:linear-gradient(135deg,#D92525,#FFCC00);"></div><div class="info"><b>Fire Gradient ★</b><span>135° · đỏ → cam → vàng — DE hero campaign, key visual.</span></div></div>
-         <div class="grad-tile"><div class="swimg" style="background:linear-gradient(135deg,#7D0B0E,#D92525,#FFCC00);"></div><div class="info"><b>Red to Gold</b><span>135° · đỏ đậm → cam vàng — CTA panel, story cover.</span></div></div>
-         <div class="grad-tile"><div class="swimg" style="background:linear-gradient(180deg,#FFCC00,#FFDF55);"></div><div class="info"><b>Gold Soft</b><span>180° · #FFCC00 → #FFDF55 — Badge accent, button hover.</span></div></div>
-         <div class="grad-tile"><div class="swimg" style="background:radial-gradient(circle at 70% 30%,#FFE899,#FFFFFF);"></div><div class="info"><b>Gold Glow</b><span>radial 70% 30% · #FFE899 → #FFF — DE hero background light.</span></div></div>
-         <div class="grad-tile"><div class="swimg" style="background:linear-gradient(180deg,#FFFFFF,#FFE899);"></div><div class="info"><b>Gold Wash</b><span>180° · #FFFFFF → #FFE899 — Section divider, footer.</span></div></div>
-         <div class="grad-tile"><div class="swimg" style="background:linear-gradient(90deg,#FFCC00 0 33.33%,#D92525 33.33% 66.66%,#000 66.66% 100%);"></div><div class="info"><b>Flag Bars</b><span>3-bar · vàng / đỏ / đen — motif top/bottom thiết kế DE.</span></div></div>
-       </div>
-       <p style="font-size:12.5px;margin-top:10px;">Lưu ý: chỉ sử dụng cho điểm nhấn nhỏ. Không phủ toàn nền, vẫn giữ rule nền sáng.</p>
+        <div class="two-col" style="gap:12px;">
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;background:linear-gradient(135deg,#D12026,#FF7A00,#FFCC00);margin-bottom:8px;"></div>
+            <div style="font-size:12.5px;font-weight:700;">Fire Gradient ★</div>
+            <div style="font-size:11px;color:var(--gray-600);">135° · đỏ → cam → vàng. DE hero campaign, key visual.</div>
+          </div>
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;background:linear-gradient(135deg,#9C171C,#FF9A3D);margin-bottom:8px;"></div>
+            <div style="font-size:12.5px;font-weight:700;">Red to Gold</div>
+            <div style="font-size:11px;color:var(--gray-600);">135° · đỏ đậm → cam vàng. CTA panel, story cover.</div>
+          </div>
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;background:linear-gradient(180deg,#FFCC00,#FFDF55);margin-bottom:8px;"></div>
+            <div style="font-size:12.5px;font-weight:700;">Gold Soft</div>
+            <div style="font-size:11px;color:var(--gray-600);">180° · #FFCC00 → #FFDF55. Badge accent, button hover.</div>
+          </div>
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;background:radial-gradient(70% 70% at 70% 30%,#FFE899,#FFFFFF);border:1px solid var(--gray-300);margin-bottom:8px;"></div>
+            <div style="font-size:12.5px;font-weight:700;">Gold Glow</div>
+            <div style="font-size:11px;color:var(--gray-600);">radial 70/30 · #FFE899 → #FFF. DE hero background light.</div>
+          </div>
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;background:linear-gradient(180deg,#FFFFFF,#FFE899);border:1px solid var(--gray-300);margin-bottom:8px;"></div>
+            <div style="font-size:12.5px;font-weight:700;">Gold Wash</div>
+            <div style="font-size:11px;color:var(--gray-600);">180° · trắng → #FFE899. Section divider, footer.</div>
+          </div>
+          <div class="card-plain" style="padding:14px;">
+            <div style="height:50px;border-radius:8px;display:flex;overflow:hidden;margin-bottom:8px;"><div style="flex:1;background:#FFCC00;"></div><div style="flex:1;background:#D12026;"></div><div style="flex:1;background:#1F1F1F;"></div></div>
+            <div style="font-size:12.5px;font-weight:700;">Flag Bars</div>
+            <div style="font-size:11px;color:var(--gray-600);">3-bar · vàng / đỏ / đen. Motif top/bottom thiết kế DE.</div>
+          </div>
+        </div>
+        <p style="font-size:12.5px;margin-top:10px;">Lưu ý: chỉ sử dụng cho điểm nhấn nhỏ. Không phủ toàn nền, vẫn giữ rule nền sáng.</p>
+      </div>
     </div>
   </div>
 
@@ -1343,17 +1408,17 @@
       <div>
         <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:14px;">Quy tắc tỉ lệ &amp; contrast</h4>
         <div class="ratio-bar">
-           <div style="width:55%;background:#F0F0F0;color:#555;">55% · Surface</div>
-           <div style="width:25%;background:#3A3A3A;">25% · Text</div>
-           <div style="width:12%;background:#FFCC00;color:#1a1a1a;">12% · DE</div>
-           <div style="width:8%;background:#D92525;">8% · Đỏ</div>
+          <div style="width:55%;background:var(--gray-300);color:var(--ink);">55% · Surface</div>
+          <div style="width:25%;background:#3A3A3A;">25% · Text</div>
+          <div style="width:12%;background:#FFCC00;color:#1F1F1F;">12% · DE</div>
+          <div style="width:8%;background:var(--red);">8% · Đỏ</div>
         </div>
-        <p class="ratio-note">Đỏ PNE giữ vai trò thương hiệu mẹ qua logo + nhấn CTA nhỏ, không lấn át diện tích nền sáng.</p>
+        <p class="ratio-note">Vàng chiếm ≤15% diện tích — chỉ làm accent (stripe/badge/pill/highlight). Đỏ PNE giữ vai trò thương hiệu mẹ qua logo + nhấn CTA nhỏ.</p>
         <div class="access-row">
           <span>ACCESSIBILITY · AA</span>
-          <span class="ok">Gold-30 / trắng 7.1:1 ✓</span>
-          <span class="ok">Gold-10 / Gold-80 13.4:1 ✓</span>
-          <span class="ok">Red-50 / trắng 4.6:1 ✓</span>
+          <span>Gold-30 / trắng <b>7.1:1 ✓</b></span>
+          <span>Gold-10 / Gold-80 <b>13.4:1 ✓</b></span>
+          <span>Red-50 / trắng <b>4.6:1 ✓</b></span>
         </div>
       </div>
       <div>
