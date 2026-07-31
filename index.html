@@ -366,6 +366,43 @@
   .do-card .tag::before{content:"✓";color:var(--ink);font-size:13px;}
   .dont-card .tag{color:var(--red);}
   .dont-card .tag::before{content:"✕";color:var(--red);font-size:13px;}
+  .do-card ul,.dont-card ul{margin-top:2px;}
+  .do-card ul li,.dont-card ul li{padding-left:14px;position:relative;margin-bottom:8px;line-height:1.5;}
+  .do-card ul li:last-child,.dont-card ul li:last-child{margin-bottom:0;}
+  .do-card ul li::before{content:"–";position:absolute;left:0;color:var(--gray-600);}
+  .dont-card ul li::before{content:"–";position:absolute;left:0;color:var(--red);}
+  .do-card code,.dont-card code{background:rgba(0,0,0,0.06);padding:1px 6px;border-radius:4px;font-size:12px;}
+
+  .warning-strip{
+    display:flex;gap:12px;align-items:flex-start;margin-top:var(--s2);
+    background:var(--red-tint-08);border:1px solid var(--red-tint-14);border-radius:var(--radius-sm);
+    padding:14px 18px;font-size:13px;color:var(--red-dark);line-height:1.55;
+  }
+  .warning-strip .ico-badge{background:var(--red);color:#fff;}
+
+  .example-pair{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3);}
+  .example-text-card{border-radius:var(--radius);overflow:hidden;border:1px solid var(--gray-300);}
+  .example-text-card .ex-tag{padding:10px 16px;font-size:11.5px;font-weight:800;text-transform:uppercase;letter-spacing:.05em;}
+  .example-text-card.good .ex-tag{background:#EAF6EC;color:#2C8C42;}
+  .example-text-card.bad .ex-tag{background:var(--red-tint-08);color:var(--red);}
+  .example-text-card .ex-body{padding:18px 18px 8px;font-size:13.5px;line-height:1.65;color:var(--ink);background:var(--gray-100);}
+  .example-text-card .ex-why{padding:14px 18px 18px;font-size:12.5px;color:var(--ink-soft);border-top:1px dashed var(--gray-300);margin-top:12px;}
+  .example-text-card .ex-why strong{color:var(--ink);}
+
+  .checklist{display:flex;flex-direction:column;gap:10px;}
+  .checklist-item{display:flex;gap:12px;align-items:flex-start;padding:12px 16px;background:var(--gray-100);border-radius:var(--radius-sm);border:1px solid var(--gray-300);}
+  .checklist-item .ico-badge{margin-top:1px;}
+  .checklist-item p{margin:0;font-size:13.5px;color:var(--ink);}
+
+  .platform-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s2);}
+  .platform-card{
+    display:flex;gap:14px;align-items:flex-start;
+    border:1px solid var(--gray-300);border-radius:var(--radius);padding:18px 20px;background:#fff;
+    transition:box-shadow .18s, transform .18s;
+  }
+  .platform-card:hover{box-shadow:var(--shadow);transform:translateY(-3px);}
+  .platform-card h5{font-size:14.5px;color:var(--ink);margin-bottom:6px;}
+  .platform-card p{font-size:13px;margin:0;color:var(--ink-soft);line-height:1.55;}
 
   /* caption/footer sample -- redesigned to avoid black block */
   .code-box{
@@ -474,6 +511,7 @@
 <symbol id="i-gift" viewBox="0 0 24 24"><rect x="3" y="9" width="18" height="12" rx="1"/><path d="M3 9h18M12 9v12"/><path d="M9 9c-1.5-3 1-5 3-3 2-2 4.5 0 3 3"/></symbol>
 <symbol id="i-calendar" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
 <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></symbol>
+<symbol id="i-message" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4V5Z"/><path d="M8 9h8M8 12.5h5"/></symbol>
 <symbol id="i-plane" viewBox="0 0 24 24"><path d="M2 12l20-9-9 20-2-8-8-3Z"/></symbol>
 </defs>
 </svg>
@@ -1361,58 +1399,140 @@
   </div>
 
   <div class="section">
-    <div class="section-head"><h2>Quy chuẩn ngôn ngữ &amp; xưng hô</h2></div>
+    <div class="section-head"><h2>Ngôn ngữ &amp; xưng hô</h2></div>
 
     <div class="dodont-block">
-      <h4>Cách gọi đối tượng</h4>
+      <h4>Gọi đối tượng</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>"Học viên", "Bạn trẻ", "Quý phụ huynh", "Người trẻ thực tế". Tạo cảm giác tôn trọng và chuyên nghiệp.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tránh dùng từ hạ thấp hoặc dán nhãn tiêu cực: Học sinh kém/trượt đại học, lao động nghèo, đối tượng đổi đời, con em lười biếng.</div>
+        <div class="do-card"><div class="tag">Do</div>"Học viên", "Bạn trẻ", "Quý phụ huynh", "Người trẻ thực tế".</div>
+        <div class="dont-card"><div class="tag">Don't</div>"Học sinh kém/trượt đại học", "lao động nghèo", "đối tượng đổi đời", "con em lười biếng".</div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Cách xưng hô thương hiệu</h4>
+      <h4>Xưng hô thương hiệu</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>"PNE", "Phuong Nam Education", "Chúng mình" (trong các bài viết gần gũi cho Gen Z).</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tuyệt đối không xưng là "Chúng tôi" trong mọi bài viết.</div>
+        <div class="do-card"><div class="tag">Do</div>"PNE", "Phuong Nam Education", "Trung tâm Phương Nam".</div>
+        <div class="dont-card"><div class="tag">Don't</div>"Chúng tôi" trong bất kỳ bài viết nào.</div>
       </div>
     </div>
+  </div>
 
-    <div class="dodont-block">
-      <h4>Định vị chương trình</h4>
-      <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Định vị là: Hệ sinh thái đào tạo &amp; khảo thí tiếng Đức khép kín tại TP.HCM (Học tại chỗ - Thi tại chỗ - Đỗ tại chỗ).</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tránh định vị Trung tâm môi giới du học, Xuất khẩu lao động giá rẻ, Đi làm điều dưỡng vất vả, kể khổ chăm sóc người già.</div>
+  <div class="section">
+    <div class="section-head"><h2>Từ ngữ nhạy cảm</h2></div>
+    <div class="dodont-pair">
+      <div class="do-card">
+        <div class="tag">Do</div>
+        Chỉ dùng cụm đã được duyệt, đúng nguyên văn:
+        <ul>
+          <li>"Bảo chứng kép"</li>
+          <li>"Đơn vị khảo thí chính thức"</li>
+          <li>"Tỷ lệ đỗ ÖSD lần đầu 97,3%"</li>
+          <li>"Chưa có trường hợp nào rớt visa đến thời điểm hiện tại"</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="tag">Don't</div>
+        Cấm tuyệt đối các từ/biến thể sau (hiệu lực từ 05/07/2026, trừ khi có văn bản pháp lý chứng minh):
+        <ul>
+          <li>"Nhất", "Duy nhất", "Tốt nhất", "Số 1"</li>
+          <li>"Hàng đầu", "Top đầu", "Không đối thủ"</li>
+          <li>"Độc quyền", "Vượt trội", "Không ai sánh bằng"</li>
+          <li>"Đầu tiên và duy nhất"</li>
+        </ul>
       </div>
     </div>
+    <div class="warning-strip">
+      <span class="ico-badge sm"><svg class="ico"><use href="#i-shield"></use></svg></span>
+      <div><strong>Đây là danh sách đóng, không phải gợi ý.</strong> AI không được thay bằng từ đồng nghĩa nghe "an toàn hơn" — nếu một từ có tinh thần tương tự (khẳng định vị trí số 1 tuyệt đối) mà không nằm trong whitelist, mặc định là cấm.</div>
+    </div>
+  </div>
 
-    <div class="dodont-block">
-      <h4>Từ ngữ nhạy cảm</h4>
-      <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Sử dụng từ ngữ cam kết dựa trên cơ sở dữ liệu nội bộ chứng minh được hoặc văn bản pháp lý có sẵn: Bảo chứng kép, Đơn vị khảo thí chính thức, Tỷ lệ đỗ ÖSD lần đầu 97.3%, Chưa có trường hợp nào rớt visa đến thời điểm hiện tại.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tuyệt đối không sử dụng tự do các từ: "Nhất", "Duy nhất", "Tốt nhất", "Số một" (hoặc từ ngữ có ý nghĩa tương tự) nếu không có tài liệu hợp pháp chứng minh theo quy định (có hiệu lực từ 05/07/2026).</div>
+  <div class="section">
+    <div class="section-head"><h2>Rào chắn chống bịa số liệu</h2></div>
+    <div class="dodont-pair">
+      <div class="do-card">
+        <div class="tag">Do</div>
+        <ul>
+          <li>Chỉ dùng số liệu xuất hiện nguyên văn trong tài liệu USP gốc (97,3% đỗ ÖSD, 100% đỗ visa, 15 năm kinh nghiệm, 357 Lê Hồng Phong Q10...).</li>
+          <li>Nếu cần một con số không có sẵn trong tài liệu gốc, phải chèn placeholder <code>[CẦN XÁC NHẬN SỐ LIỆU]</code> thay vì tự suy ra.</li>
+          <li>Khi nói về case study cụ thể (VD: "học viên A đậu visa sau X tháng"), chỉ dùng nếu có brief thực tế đi kèm, không tự bịa tên/mốc thời gian.</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="tag">Don't</div>
+        <ul>
+          <li>Không tự làm tròn/nâng số liệu cho "nghe ấn tượng hơn" (VD: biến 97,3% thành "gần như tuyệt đối", biến "chưa ghi nhận trường hợp rớt visa" thành "100% đậu visa không ngoại lệ").</li>
+          <li>Không tự sáng tạo thống kê ngành nghề, mức lương Đức, hay luật nhập cư nếu không có nguồn — kể cả khi nghe hợp lý.</li>
+        </ul>
       </div>
     </div>
   </div>
 
   <div class="section">
     <div class="section-head"><h2>Giọng văn truyền thông</h2></div>
-
-    <div class="dodont-block">
-      <h4>Giọng văn truyền thông</h4>
-      <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Thể hiện sự thẳng thắn, sòng phẳng, thực tế và thấu cảm. Đóng vai trò là một "người tri kỷ trưởng thành" đối thoại với người đi làm, hoặc "người đồng hành lo toan" đáng tin cậy với phụ huynh.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tránh dùng giọng văn giật tít sáo rỗng, hô hào, nhảy múa bắt trend quá lố hoặc giọng văn hành chính, hàn lâm thô khan, lý thuyết suông.</div>
+    <div class="dodont-pair">
+      <div class="do-card">
+        <div class="tag">Do</div>
+        <ul>
+          <li><strong>Người đi làm (23–28 tuổi):</strong> viết như một "người tri kỷ trưởng thành" — từng trải, nói thẳng, không giáo điều.</li>
+          <li><strong>Phụ huynh:</strong> viết như "người đồng hành lo toan" — điềm tĩnh, chi tiết, ưu tiên sự chắc chắn hơn cảm xúc.</li>
+          <li><strong>Giọng chung:</strong> thẳng thắn, sòng phẳng, thực tế, thấu cảm.</li>
+          <li><strong>Emoji:</strong> dùng tiết chế, tối đa 2–3 emoji/bài, đặt cuối câu hoặc đầu dòng, không lạm dụng.</li>
+          <li><strong>Câu cảm thán:</strong> được phép 1 câu/bài để tạo hook, không quá 1.</li>
+        </ul>
+      </div>
+      <div class="dont-card">
+        <div class="tag">Don't</div>
+        <ul>
+          <li>Giọng giật tít sáo rỗng, hô hào, nhảy bắt trend quá lố ("CỰC SỐC", "KHÔNG THỂ TIN NỔI").</li>
+          <li>Giọng hành chính, hàn lâm, khô khan, lý thuyết suông.</li>
+          <li>Không công kích trực diện đối thủ hoặc so sánh phá giá — chỉ nêu rủi ro hệ thống khách quan (VD: rủi ro "học một nơi, thi một nẻo").</li>
+        </ul>
       </div>
     </div>
+  </div>
 
-    <div class="dodont-block">
-      <h4>Cách nói về đối thủ hoặc chương trình khác</h4>
-      <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Nhấn mạnh rủi ro hệ thống của thị trường một cách khách quan: Khó khăn khi "học một nơi, thi một nẻo", rủi ro bị ngâm hồ sơ do trung tâm phụ thuộc lịch thi bên ngoài.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Tuyệt đối không xưng công kích trực diện, hạ bệ các trung tâm khác hoặc so sánh phá giá dịch vụ.</div>
+  <div class="section">
+    <div class="section-head"><h2>Ví dụ Do / Don't cho văn bản</h2></div>
+    <p class="section-lead" style="margin-bottom:20px;">Không chỉ áp dụng cho hình ảnh — văn bản caption cũng phải tuân thủ đúng bộ quy chuẩn.</p>
+    <div class="example-pair">
+      <div class="example-text-card good">
+        <div class="ex-tag">✓ Do</div>
+        <div class="ex-body">"[Chúc mừng PNE-er] Ẵm trọn B1 ÖSD sau 4 tháng học tại chỗ 📜 Không phải nhờ đề dễ, mà nhờ đúng phương pháp luyện thi sát đề thật. Bạn cũng muốn đạt kết quả này? Đăng ký lớp học thử miễn phí ngay hôm nay! #PNE #TramThiOSD #HocTiengDucTaiTPHCM"</div>
+        <div class="ex-why"><strong>Vì sao đúng:</strong> có hook cụ thể (4 tháng), có USP thật (học tại chỗ), có CTA rõ ràng, giọng gần gũi không cường điệu, có hashtag chuẩn.</div>
       </div>
+      <div class="example-text-card bad">
+        <div class="ex-tag">✕ Don't</div>
+        <div class="ex-body">"PNE tự hào là trung tâm SỐ 1 giúp học viên đậu B1 100% không trượt!!! Đăng ký NGAY để không bỏ lỡ cơ hội ĐỔI ĐỜI!!!"</div>
+        <div class="ex-why"><strong>Vì sao sai:</strong> dùng từ cấm ("số 1"), bịa số liệu ("100% không trượt" — không có trong tài liệu gốc), giọng hô hào sáo rỗng, dùng từ dán nhãn ("đổi đời" nằm trong danh sách tránh).</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head"><h2>Độ dài chuẩn theo nền tảng</h2></div>
+    <div class="platform-grid">
+      <div class="platform-card">
+        <span class="ico-badge sm"><svg class="ico"><use href="#i-message"></use></svg></span>
+        <div><h5>Fanpage Facebook (caption)</h5><p>80–150 từ, đoạn ngắn 2–3 câu, xuống dòng nhiều.</p></div>
+      </div>
+      <div class="platform-card">
+        <span class="ico-badge sm"><svg class="ico"><use href="#i-video"></use></svg></span>
+        <div><h5>Kịch bản Reels/TikTok</h5><p>30–45 giây nói, hook trong 3 giây đầu.</p></div>
+      </div>
+      <div class="platform-card">
+        <span class="ico-badge sm"><svg class="ico"><use href="#i-phone"></use></svg></span>
+        <div><h5>Zalo OA</h5><p>50–80 từ, đi thẳng vào CTA sớm hơn Facebook.</p></div>
+      </div>
+      <div class="platform-card">
+        <span class="ico-badge sm"><svg class="ico"><use href="#i-file"></use></svg></span>
+        <div><h5>Bài blog SEO (website)</h5><p>800–1200 từ, có heading rõ.</p></div>
+      </div>
+    </div>
+    <div class="warning-strip">
+      <span class="ico-badge sm"><svg class="ico"><use href="#i-clock"></use></svg></span>
+      <div>Không viết caption Facebook dài như bài blog, hoặc kịch bản Reels dài quá 60 giây (rơi vào vùng chết tương tác).</div>
     </div>
   </div>
 
@@ -1456,11 +1576,25 @@
     </div>
   </div>
 
-</section>
+  <div class="section">
+    <div class="section-head"><h2>Checklist tự kiểm tra trước khi xuất bài</h2></div>
+    <p class="section-lead" style="margin-bottom:20px;">Trước khi đưa ra bản cuối, AI phải tự trả lời Có/Không cho từng câu:</p>
+    <div class="checklist">
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Đã tránh toàn bộ từ trong danh sách cấm (Mục "Từ ngữ nhạy cảm")?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Mọi số liệu đều nằm trong danh sách đã duyệt, không tự suy diễn (Mục "Rào chắn chống bịa số liệu")?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Có đúng 1 USP cốt lõi được lồng ghép, không nhồi nhét nhiều USP cùng lúc?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Có CTA dẫn tới Lead Magnet cụ thể, không chỉ dừng ở "nhắn tin tư vấn"?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Có đủ footer chuẩn và 3–5 hashtag từ bộ hashtag chiến lược?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Độ dài đúng với nền tảng đang viết (Mục "Độ dài chuẩn theo nền tảng")?</p></div>
+      <div class="checklist-item"><span class="ico-badge sm"><svg class="ico"><use href="#i-check"></use></svg></span><p>Giọng văn đúng persona người đọc (tri kỷ trưởng thành / đồng hành lo toan)?</p></div>
+    </div>
+    <div class="warning-strip">
+      <span class="ico-badge sm"><svg class="ico"><use href="#i-shield"></use></svg></span>
+      <div>Nếu bất kỳ ô nào là "Không" → phải sửa lại trước khi xuất bản, không xuất bài "gần đúng".</div>
+    </div>
+  </div>
 
-<!-- =========================================================
-     TAB 5 — VISUAL GUIDELINE
-========================================================== -->
+</section>
 <section class="tab-panel" id="tab5">
 
   <div class="tab-intro">
