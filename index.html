@@ -298,24 +298,22 @@
 
   .group-card{
     display:flex;align-items:flex-start;gap:16px;
-    border:1px solid var(--gray-300);border-radius:var(--radius);padding:20px 22px;
-    background:linear-gradient(135deg,var(--red),var(--red-dark));color:#fff;
+    border:1px solid var(--gray-300);border-left:4px solid var(--red);border-radius:var(--radius);padding:20px 22px;
+    background:var(--gray-100);color:var(--ink);
     cursor:pointer;transition:transform .18s, box-shadow .18s;margin-bottom:var(--s2);
   }
   .group-card:hover{transform:translateY(-3px);box-shadow:var(--shadow);}
   .group-card .gc-body{flex:1;}
-  .group-card .gc-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;opacity:.85;margin-bottom:4px;}
-  .group-card h4{font-size:17px;color:#fff;margin-bottom:6px;}
-  .group-card p{font-size:13px;color:rgba(255,255,255,0.88);margin-bottom:10px;}
-  .group-card .chip-row span{background:rgba(255,255,255,0.18);color:#fff;}
-  .group-card .gc-cta{font-size:12.5px;font-weight:800;color:#fff;display:flex;align-items:center;gap:5px;align-self:center;white-space:nowrap;}
+  .group-card .gc-label{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--red);margin-bottom:4px;}
+  .group-card h4{font-size:17px;color:var(--ink);margin-bottom:6px;}
+  .group-card p{font-size:13px;color:var(--ink-soft);margin-bottom:10px;}
+  .group-card .chip-row span{background:var(--red-tint-08);color:var(--red);}
+  .group-card .gc-cta{font-size:12.5px;font-weight:800;color:var(--red);display:flex;align-items:center;gap:5px;align-self:center;white-space:nowrap;}
+  .group-card .ico-badge{background:var(--red-tint-08);color:var(--red);}
   .group-card.niche{
-    background:#fff;color:var(--ink);border:1px dashed var(--gray-400);
+    background:#fff;color:var(--ink);border:1px dashed var(--gray-400);border-left:1px dashed var(--gray-400);
   }
-  .group-card.niche .gc-label{color:var(--gray-600);opacity:1;}
-  .group-card.niche h4{color:var(--ink);}
-  .group-card.niche p{color:var(--ink-soft);}
-  .group-card.niche .gc-cta{color:var(--red);}
+  .group-card.niche .gc-label{color:var(--gray-600);}
   .group-card.niche .ico-badge{background:var(--gray-100);color:var(--ink-soft);}
 
   .general-insight-card{
@@ -366,6 +364,7 @@
   .overview-mini .om-item .val{font-size:12.5px;color:var(--ink);font-weight:600;line-height:1.4;}
   .chip-row{display:flex;gap:8px;flex-wrap:wrap;}
   .chip-row span{font-size:11px;font-weight:700;background:var(--red-tint-08);color:var(--red);padding:4px 10px;border-radius:999px;}
+  .insight-cards{display:flex;flex-direction:column;gap:10px;}
   .insight-topic{font-size:13.5px;font-weight:800;color:var(--ink);margin:4px 0 12px;}
   .insight-layer{border-left:3px solid var(--gray-300);padding-left:14px;margin-bottom:14px;}
   .insight-layer.il-final{border-left-color:var(--red);}
@@ -872,7 +871,6 @@
   <div class="hero-inner">
     <span class="hero-eyebrow">Chiến lược truyền thông 2026</span>
     <h1>Chiến lược Truyền thông<br>Du học nghề Đức 2026</h1>
-    <p class="sub">Xây dựng vị thế dẫn đầu trong kỷ nguyên số và công nghệ xanh.</p>
     <div class="hero-brand"><span class="dot"></span> PHUONG NAM EDUCATION</div>
   </div>
 </div>
@@ -935,7 +933,7 @@
 
   <div class="tab-intro">
     <span class="eyebrow">01</span>
-    <h2>Nghiên cứu thị trường &amp; khách hàng</h2>
+    <h2>Nghiên cứu thị trường</h2>
     <div class="rule"></div>
   </div>
 
@@ -993,7 +991,6 @@
       </div>
     </div>
   </div>
-
   <!-- Doi thu -->
   <div class="section">
     <div class="section-head"><h2>Phân tích đối thủ cạnh tranh</h2></div>
@@ -1098,15 +1095,15 @@
         </div>
       </div>
       <div class="gap-card">
-        <div class="gap-head"><div class="idx">4</div><h4>Minh bạch quá trình học &amp; thi (Trạm thi ÖSD)</h4></div>
+        <div class="gap-head"><div class="idx">4</div><h4>Minh bạch quá trình học - thi - xử lý hồ sơ du học khép kín (Trạm thi ÖSD)</h4></div>
         <div class="gap-body">
           <div class="gap-row"><div class="lbl">Hiện trạng đối thủ</div><p>Không phải trạm thi chính thức, phụ thuộc lịch thi bên ngoài, thiếu minh bạch về tiến độ tổ chức thi.</p></div>
-          <div class="gap-row"><div class="lbl">Khác biệt từ PNE</div><p>"Trạm thi ÖSD chính thức tại TP.HCM - Học tại chỗ, Thi tại chỗ". Công khai báo cáo tiến độ bằng con số thực tế.</p></div>
-          <div class="gap-row msg"><div class="lbl">Thông điệp</div><p>"PNE – Trạm thi ÖSD chính thức: Học tại chỗ, thi tại chỗ, tự tin đỗ B1/B2."</p></div>
+          <div class="gap-row"><div class="lbl">Khác biệt từ PNE</div><p>"Trạm thi ÖSD chính thức tại TP.HCM: Học - Thi - Xử lý hồ sơ cùng 1 hệ thống".</p></div>
+          <div class="gap-row msg"><div class="lbl">Thông điệp</div><p>"PNE – Trạm thi ÖSD chính thức: Học tại chỗ, thi tại chỗ, xử lý hồ sơ tại chỗ, tự tin cất cánh du học nghề Đức."</p></div>
         </div>
       </div>
     </div>
-    <div class="callout-strip" style="margin-top:var(--s3);"><strong>Định vị chiến thắng:</strong> Tổ chức giáo dục thế hệ mới — tiên phong công nghệ &amp; hướng nghiệp thực dụng, bảo chứng bằng hệ thống Trạm thi ÖSD quốc tế tại chỗ.</div>
+    <div class="callout-strip" style="margin-top:var(--s3);"><strong>Định vị chiến thắng:</strong> Tổ chức giáo dục thế hệ mới — tiên phong công nghệ &amp; hướng nghiệp thực dụng, bảo chứng bằng hệ thống Trạm thi ÖSD quốc tế - Xử lý hồ sơ du học tại chỗ.</div>
   </div>
 
 </section>
@@ -1163,7 +1160,7 @@
 
 
     <div class="group-card" data-drawer="drawer-phuhuynh">
-      <span class="ico-badge" style="background:rgba(255,255,255,0.2);color:#fff;"><svg class="ico"><use href="#i-users"></use></svg></span>
+      <span class="ico-badge"><svg class="ico"><use href="#i-users"></use></svg></span>
       <div class="gc-body">
         <div class="gc-label">Buying Group</div>
         <h4>Phụ huynh</h4>
@@ -1183,10 +1180,59 @@
       <div class="gc-cta">Xem hồ sơ <span>&rarr;</span></div>
     </div>
 
-    <div class="general-insight-card">
-      <div class="gi-label">Insight chung &middot; giai đoạn quyết định</div>
-      <h4>Nỗi sợ mình đang ra quyết định dựa trên thông tin chưa đầy đủ</h4>
-      <p>Càng gần quyết định, khách hàng càng không cần thêm lý do để mua; họ cần chắc chắn rằng mình không bỏ sót một lý do đủ lớn để không mua.</p>
+    <h4 style="font-size:14px;margin:var(--s3) 0 4px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);">Bảng tổng hợp Insight ẩn</h4>
+    <p class="section-lead" style="margin:0 0 14px;">Tổng hợp toàn bộ insight ẩn theo từng nỗi sợ cốt lõi xuyên suốt các phân khúc.</p>
+    <div class="insight-cards">
+      <div class="expand-card">
+        <div class="exp-head"><h4>Nỗi sợ chọn sai tương lai</h4><div class="chev">+</div></div>
+        <div class="exp-body"><div class="exp-body-inner">
+          <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Học sinh không thực sự sợ một con đường khó; các bạn sợ phải cam kết với một lựa chọn khi chưa đủ hiểu bản thân - vì nếu chọn sai, chính mình sẽ là người phải trả giá.</p></div>
+          <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Em chưa biết sau THPT nên học gì.” “Em không biết mình hợp nghề nào.”</p></div>
+          <div class="insight-layer"><div class="il-label">Hành vi</div><p>Xem nhiều nội dung về Đại học, học nghề, du học; hỏi bạn bè, bố mẹ; lưu nhiều thông tin nhưng vẫn trì hoãn quyết định.</p></div>
+          <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Bị buộc phải chọn hướng đi ở tuổi 16–18 trong khi chưa có đủ trải nghiệm để hiểu mình thực sự phù hợp với điều gì.</p></div>
+          <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Đừng chỉ giới thiệu “ngành nào đang tuyển”. Hãy giúp các bạn hình dung bản thân trong từng lựa chọn, hiểu công việc thực tế, lộ trình phát triển và xem liệu mình có phù hợp trước khi quyết định.</p></div>
+        </div></div>
+      </div>
+      <div class="expand-card">
+        <div class="exp-head"><h4>Nỗi sợ trở thành gánh nặng cho gia đình.</h4><div class="chev">+</div></div>
+        <div class="exp-body"><div class="exp-body-inner">
+          <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Với một số học sinh có hoàn cảnh khó khăn, điều hấp dẫn ở Du học nghề Đức không chỉ là cơ hội sang Đức; đó là khả năng bắt đầu tự chịu trách nhiệm cho tương lai của mình sớm hơn.</p></div>
+          <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Nhà em không có điều kiện lắm.” / “Chi phí đi Đức có cao không?” / “Học có được nhận lương không?”</p></div>
+          <div class="insight-layer"><div class="il-label">Hành vi</div><p>Đặc biệt chú ý đến chi phí, các khoản phải chuẩn bị và thu nhập trong quá trình học; thường cân nhắc rất kỹ trước khi nói với bố mẹ.</p></div>
+          <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn có tương lai tốt hơn nhưng đồng thời ý thức rằng gia đình không thể hỗ trợ mình vô thời hạn. Muốn tiến lên nhưng không muốn trở thành thêm một khoản phải lo.</p></div>
+          <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Đừng biến insight thành “chi phí rẻ/lương cao”. Hãy kể hành trình tự lập: từ hoàn cảnh ban đầu → học nghề → có thu nhập → từng bước tự chủ; ưu tiên case có xuất phát điểm tương đồng.</p></div>
+        </div></div>
+      </div>
+      <div class="expand-card">
+        <div class="exp-head"><h4>Nỗi sợ của cha mẹ về việc buông tay nhưng mất khả năng bảo vệ con</h4><div class="chev">+</div></div>
+        <div class="exp-body"><div class="exp-body-inner">
+          <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Phụ huynh không thực sự muốn giữ con ở bên mình; họ muốn biết rằng khi buông tay cho con đi, họ vẫn không mất hoàn toàn khả năng bảo vệ con.</p></div>
+          <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Qua đó ai lo cho con?” / “Nếu có chuyện thì sao?” / “Trung tâm có hỗ trợ không?”</p></div>
+          <div class="insight-layer"><div class="il-label">Hành vi</div><p>Tìm kiếm trên Google/Facebook, xem review, hỏi người quen, kiểm tra học viên thật và tìm nhiều nguồn trước khi đồng ý.</p></div>
+          <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn con trưởng thành và có tương lai riêng nhưng việc con sang Đức đồng nghĩa với việc họ không còn khả năng chăm sóc, xử lý vấn đề và kiểm soát trực tiếp như trước.</p></div>
+          <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Không chỉ nói “PNE hỗ trợ học viên”. Cần cho thấy PNE hỗ trợ cụ thể trong những tình huống thật: trước khi bay, khi mới sang, khi học nghề, khi gặp khó khăn… để phụ huynh hình dung được “con tôi sẽ được chăm sóc thế nào”.</p></div>
+        </div></div>
+      </div>
+      <div class="expand-card">
+        <div class="exp-head"><h4>Nỗi sợ của người đi làm về việc những gì đã tích lũy trở nên vô giá trị</h4><div class="chev">+</div></div>
+        <div class="exp-body"><div class="exp-body-inner">
+          <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Khách hàng Visa 18B không chỉ tìm một nơi có thu nhập tốt hơn; họ tìm một cơ hội để những gì mình đã tích lũy vẫn có giá trị khi bước sang một thị trường mới.</p></div>
+          <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Sang Đức có được đi làm ngay không?” / “Kinh nghiệm Bếp của tôi có được tính không?” / “Tôi không muốn học lại.”</p></div>
+          <div class="insight-layer"><div class="il-label">Hành vi</div><p>Kiểm tra kỹ điều kiện bằng Đại học, kinh nghiệm Bếp, công việc, doanh nghiệp, hợp đồng và thu nhập; thường so sánh với những con đường sang Đức khác.</p></div>
+          <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Muốn thay đổi môi trường và nâng chất lượng cuộc sống nhưng không muốn xóa bỏ những năm đã đầu tư cho nghề nghiệp để trở thành người bắt đầu từ số 0.</p></div>
+          <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Không truyền thông 18B như một phiên bản khác của “du học”. Nhấn mạnh giá trị kinh nghiệm hiện tại + đi làm ngay + doanh nghiệp đào tạo trong quá trình làm việc, đồng thời làm rõ điều kiện để khách tự đánh giá mình có phù hợp.</p></div>
+        </div></div>
+      </div>
+      <div class="expand-card">
+        <div class="exp-head"><h4>Nỗi sợ mình đang ra quyết định dựa trên thông tin chưa đầy đủ</h4><div class="chev">+</div></div>
+        <div class="exp-body"><div class="exp-body-inner">
+          <div class="insight-layer"><div class="il-label">Insight thực sự ẩn</div><p>Càng gần quyết định, khách hàng càng không cần thêm lý do để mua; họ cần chắc chắn rằng mình không bỏ sót một lý do đủ lớn để không mua.</p></div>
+          <div class="insight-layer"><div class="il-label">Biểu hiện bề mặt</div><p>“Có thật không?” / “Người này đi được, nhưng hồ sơ của tôi thì sao?” / “Còn khoản nào phát sinh không?” / “Công việc có đúng như nói không?”</p></div>
+          <div class="insight-layer"><div class="il-label">Hành vi</div><p>Xem đi xem lại nội dung, tìm case, đọc comment, Google thêm thông tin, kiểm tra nhiều nguồn và thường quay lại với cùng một câu hỏi dưới những góc khác nhau.</p></div>
+          <div class="insight-layer"><div class="il-label">Tension ẩn</div><p>Khi quyết định càng lớn, khách hàng càng ý thức rằng thông tin mình đang có có thể chỉ là phần được cho xem. Họ không chỉ sợ chọn sai; họ sợ mình không biết điều gì mình chưa biết.</p></div>
+          <div class="insight-layer il-final"><div class="il-label">Hàm ý content</div><p>Giai đoạn cuối không nên “đẩy sale” liên tục. Cần chuyển sang content kiểm chứng và minh bạch: ai phù hợp/không phù hợp, điều kiện thật, chi phí, quy trình, công việc, hợp đồng, rủi ro và case thực tế.</p></div>
+        </div></div>
+      </div>
     </div>
 
     <h4 style="font-size:14px;margin:var(--s4) 0 16px;text-transform:uppercase;letter-spacing:.06em;color:var(--red);">Quy mô phân bổ DHND</h4>
@@ -1857,6 +1903,7 @@
   </div>
 </div>
 
+
   <div class="section">
     <div class="section-head"><h2>Định vị thương hiệu PNE</h2></div>
     <p class="section-lead" style="margin-bottom:20px;">Hệ sinh thái du học nghề Đức khép kín &amp; toàn diện tại TP.HCM</p>
@@ -1881,7 +1928,8 @@
         <h4>Lớp bổ trợ Năng lực đào tạo & triển khai</h4>
         <ul>
           <li><strong>Lộ trình đào tạo bám sát thực tế, định hướng rõ đầu ra tiếng Đức và kỹ năng làm việc.</li>
-          <li><strong>Quy trình hướng dẫn và luyện phỏng vấn với doanh nghiệp được chuẩn hóa.</li>
+          <li><strong>Tôn trọng sự tự lập:</strong> Trả lại quyền tự quyết tương lai cho học viên.</li>
+          <li><strong>Đồng hành tin cậy:</strong> Thương hiệu 15 năm uy tín tại thị trường phía Nam.</li>
         </ul>
       </div>
       <div class="card-plain">
@@ -1889,7 +1937,7 @@
         <ul>
           <li><strong>15 năm kinh nghiệm:</strong> Uy tín được khẳng định qua hàng ngàn học viên.</li>
           <li><strong>Trạm thi chính thức:</strong> Được Sở GD&amp;ĐT cấp phép hoạt động.</li>
-          <li><strong>97.3% đỗ ÖSD:</strong> Tỷ lệ đỗ chứng chỉ lần đầu dẫn đầu thị trường.</li>
+          <li><strong>97.3% đạt chứng chỉ tiếng Đức ngay lần thi đầu tiên:</strong> Tỷ lệ đỗ chứng chỉ lần đầu dẫn đầu thị trường.</li>
         </ul>
       </div>
     </div>
@@ -1940,7 +1988,6 @@
   </div>
 
   <div class="section">
-    <div class="section">
   <div class="section-head"><h2>Bảng đối chiếu độ bao phủ phân khúc khách hàng</h2></div>
   <div class="gap-grid">
     <div class="gap-card">
@@ -1978,40 +2025,37 @@
   </div>
 </div>
 
-<div class="section">
+  <div class="section">
   <div class="section-head"><h2>Chiến thuật nội dung &amp; Lead Magnet</h2></div>
-
-<h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-calendar"></use></svg></span> Phân bổ theo tuần</h4>
+  <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-calendar"></use></svg></span> Phân bổ theo tuần</h4>
   <p class="section-lead" style="margin:0 0 16px;">Nguyên tắc phân bổ: Mô hình 3P (Push – Prove – Persuade)</p>
   <div class="phase-grid" style="margin-bottom:var(--s3);">
     <div class="phase-card">
       <span class="phase-tag">Push · Thúc đẩy</span>
       <h4>Đầu tuần</h4>
       <div class="phase-days">
-        <div class="phase-day-row"><div class="d">T2 </div><div class="p">Định hướng nghề nghiệp &amp; Lộ trình</div></div>
-        <div class="phase-day-row"><div class="d">T3 </div><div class="p">Nước Đức &amp; Công việc thực tế <em>(hoặc Prove)</em></div></div>
+        <div class="phase-day-row"><div class="d">T2 · 19:30</div><div class="p">Định hướng nghề nghiệp &amp; Lộ trình</div></div>
+        <div class="phase-day-row"><div class="d">T4 · 19:30</div><div class="p">Nước Đức &amp; Công việc thực tế <em>(hoặc Prove)</em></div></div>
       </div>
     </div>
     <div class="phase-card">
       <span class="phase-tag">Prove · Chứng minh</span>
       <h4>Giữa tuần</h4>
       <div class="phase-days">
-        <div class="phase-day-row"><div class="d">T4 </div><div class="p">Tiếng Đức thực tế &amp; Năng lực đầu ra <em>(hoặc Push)</em></div></div>
-        <div class="phase-day-row"><div class="d">T5 </div><div class="p">Người thật – Hành trình thật tại Đức / Minh bạch Lộ trình, Dịch vụ &amp; Hồ sơ</div></div>
-     
+        <div class="phase-day-row"><div class="d">T4 · 19:30</div><div class="p">Tiếng Đức thực tế &amp; Năng lực đầu ra <em>(hoặc Push)</em></div></div>
+        <div class="phase-day-row"><div class="d">T5 · 19:30</div><div class="p">Người thật – Hành trình thật tại Đức / Minh bạch Lộ trình, Dịch vụ &amp; Hồ sơ</div></div>
+        <div class="phase-day-row"><div class="d">T7 · 10:00</div><div class="p">Người thật – Hành trình thật tại Đức</div></div>
       </div>
     </div>
     <div class="phase-card">
       <span class="phase-tag">Persuade · Thuyết phục</span>
       <h4>Cuối tuần</h4>
       <div class="phase-days">
-        <div class="phase-day-row"><div class="d">T7 </div><div class="p">Người thật – Hành trình thật tại Đức</div></div>
-        <div class="phase-day-row"><div class="d">CN </div><div class="p">Chương trình tuyển sinh &amp; Cơ hội tại PNE</div></div>
+        <div class="phase-day-row"><div class="d">CN · 19:30–21:00</div><div class="p">Chương trình tuyển sinh &amp; Cơ hội tại PNE</div></div>
       </div>
     </div>
   </div>
   <div class="golden-hour"><span class="ico-inline"><svg class="ico"><use href="#i-clock"></use></svg></span>Reels: đăng 20:00–21:00 hàng ngày (giờ vàng thuật toán) · Bài có Lead Magnet: đăng sáng T3/T5 (09:00–10:00) để tư vấn viên xử lý ngay trong ngày.</div>
-
   <h4 style="font-size:14px;color:var(--red);text-transform:uppercase;letter-spacing:.06em;margin:var(--s3) 0 14px;"><span class="ico-badge sm"><svg class="ico"><use href="#i-gift"></use></svg></span> Đề xuất Lead Magnet</h4>
   <div class="mini-grid">
     <div class="mini-card">
@@ -2049,7 +2093,6 @@
 
   <div class="section">
   <div class="section-head"><h2>07 Content Pillars 2026</h2></div>
-
   <div class="angle-group-title" style="margin-top:0;">Định hướng &amp; Con người thật</div>
   <div class="pillar-grid" style="margin-bottom:var(--s3);">
     <div class="pillar-card">
@@ -2065,7 +2108,6 @@
       <div class="tags"><span>20% · 4 bài/tháng</span></div>
     </div>
   </div>
-
   <div class="angle-group-title">Cơ hội &amp; Thực tế tại Đức</div>
   <div class="pillar-grid" style="margin-bottom:var(--s3);">
     <div class="pillar-card">
@@ -2087,7 +2129,6 @@
       <div class="tags"><span>10% · 2 bài/tháng</span></div>
     </div>
   </div>
-
   <div class="angle-group-title">Uy tín &amp; Minh bạch PNE</div>
   <div class="pillar-grid">
     <div class="pillar-card">
@@ -2933,47 +2974,310 @@
 
   <div class="section">
     <div class="section-head"><h2>Quy tắc giữ nhận diện</h2></div>
+    <p class="section-lead" style="margin-bottom:20px;">Quy tắc Do &amp; Don't áp dụng cho toàn bộ ấn phẩm truyền thông của PNE.</p>
+
+    <div class="angle-group-title" style="margin-top:0;">Nền tảng thương hiệu (Brand Foundation)</div>
 
     <div class="dodont-block">
-      <h4>Nền chủ đạo</h4>
+      <h4>Triết lý Visual (Brand Principles)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Giữ nền sáng (Trắng #FFFFFF / Xám nhạt #F1F1F1) làm chủ đạo, chừa nhiều khoảng thở để thiết kế hiện đại và thoáng đãng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không dùng các màu tối ngoài hệ (xanh navy, đen tuyền, xanh rêu) làm mảng nền chủ đạo cho các post thông thường.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Thiết kế để truyền tải sự tin cậy, không chỉ để bắt mắt.</li>
+            <li>Ưu tiên rõ ràng và dễ tiếp nhận hơn là nhiều hiệu ứng.</li>
+            <li>Mọi yếu tố đồ họa đều phải phục vụ thông điệp.</li>
+            <li>Giữ cảm giác hiện đại, chuyên nghiệp, trẻ trung và tích cực.</li>
+            <li>Tạo sự đồng nhất để người xem nhận ra thương hiệu ngay cả khi chưa nhìn thấy logo.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Chạy theo xu hướng thiết kế nếu làm mất bản sắc thương hiệu.</li>
+            <li>Hy sinh khả năng đọc để đổi lấy hiệu ứng thị giác.</li>
+            <li>Sử dụng các yếu tố tạo cảm giác nặng nề, u tối hoặc giật gân.</li>
+            <li>Biến mỗi bài đăng thành một phong cách hoàn toàn mới.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Gradient thương hiệu</h4>
+      <h4>Nhận diện theo quốc gia (Regional Identity)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Dùng gradient đỏ thương hiệu (#D12026 → #9C171C) cho các banner chiến dịch lớn, ảnh bìa, post vinh danh hoặc thông báo trang trọng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không lạm dụng màu Đỏ chính (#D12026) thành các mảng nền lớn cho toàn bộ bài đăng (gây gắt mắt, ức chế thị giác người lướt).</div>
+        <div class="do-card"><div class="tag">Do</div>Đức → Đỏ + Trắng + Xám + Vàng.</div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Phối sai màu quốc gia.</li>
+            <li>Dùng quá nhiều quốc kỳ.</li>
+            <li>Dùng icon văn hóa rập khuôn.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="angle-group-title">Hệ thống nền tảng thiết kế (Core Design System)</div>
+
+    <div class="dodont-block">
+      <h4>Màu sắc (Color System)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Dùng nền trắng, xám nhạt (#F1F1F1) hoặc gradient hồng nhạt → trắng để tạo sự thoáng.</li>
+            <li>Chỉ dùng màu nhấn (vàng) để đại diện cho nước Đức (văn hoá/ngôn ngữ...).</li>
+            <li>Khi cần nhiều cấp độ đỏ, tạo tint từ #D12026 ở các mức 20% / 40% / 60% / 80%.</li>
+            <li>Đảm bảo tỷ lệ khoảng 60% trắng/xám – 30% đỏ – 10% màu nhấn.</li>
+            <li>Headline tối đa 2 dòng.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Tự ý đổi sang đỏ cam, đỏ tươi hoặc đỏ đô quá đậm.</li>
+            <li>Sử dụng nền đỏ full màn hình cho toàn bộ post.</li>
+            <li>Phối trên 3 màu nhấn trong cùng một thiết kế.</li>
+            <li>Sử dụng các tone hồng hoặc đỏ không cùng hệ màu thương hiệu.</li>
+            <li>Để màu đỏ chiếm gần như toàn bộ layout gây cảm giác nặng và "creepy".</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Màu nhấn CTA</h4>
+      <h4>Typography</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Dùng màu nhấn dành riêng cho CTA, các nút bấm hành động hoặc highlight từ khóa đặc biệt quan trọng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không phối quá nhiều màu đậm cùng lúc trên diện tích lớn — làm mất sự sạch sẽ, tinh tế của thương hiệu.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Chỉ nhấn mạnh từ khóa quan trọng bằng Bold hoặc màu đỏ.</li>
+            <li>Giãn dòng thoáng, dễ đọc trên mobile (line-height tối thiểu 1.2).</li>
+            <li>Có hierarchy rõ ràng: Heading &gt; Subheading &gt; Body (gợi ý tỷ lệ cỡ chữ 3 : 1.5 : 1).</li>
+            <li>Dùng font hiện đại thống nhất (tối đa 1 font family, 2 độ đậm).</li>
+            <li>Ưu tiên background sáng, sạch, nhiều khoảng thở.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Viết headline dài 4–5 dòng.</li>
+            <li>Tô nhiều màu trong cùng một headline.</li>
+            <li>Ép chữ sát nhau hoặc tracking quá chặt.</li>
+            <li>Để mọi text cùng kích thước.</li>
+            <li>Sử dụng trên 3 font trong một thiết kế.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Màu chữ nội dung</h4>
+      <h4>Background</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Sử dụng màu chữ Đen xám (#1A1A1A) để làm nội dung chính (Body text), giúp thông tin tương phản tốt và dễ đọc trên nền sáng.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không dùng các màu lệch tông (cam, tím, hồng, xanh lá) nằm ngoài hệ màu quy chuẩn của thương hiệu.</div>
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Dùng gradient nhẹ hồng → trắng (#FFD7D8 → #FFFFFF), lấy từ hệ Gradient System chung.</li>
+            <li>Background chỉ đóng vai trò hỗ trợ nội dung.</li>
+            <li>Dùng silhouette landmark với opacity thấp (10–15%).</li>
+            <li>Đảm bảo độ tương phản chữ/nền tối thiểu 4.5:1 cho text quan trọng.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng background quá tối hoặc nhiều texture.</li>
+            <li>Dùng gradient vàng làm nền chính.</li>
+            <li>Để background nổi bật hơn headline.</li>
+            <li>Đặt landmark quá đậm làm rối hình.</li>
+          </ul>
+        </div>
       </div>
     </div>
 
     <div class="dodont-block">
-      <h4>Chữ trên ảnh (mobile-first)</h4>
+      <h4>Khả năng tiếp cận (Accessibility)</h4>
       <div class="dodont-pair">
-        <div class="do-card"><div class="tag">Nên dùng</div>Giữ chữ trên ảnh 25–30% để chuẩn mobile-first, giúp ảnh hiển thị tối ưu trên thiết bị di động.</div>
-        <div class="dont-card"><div class="tag">Cần tránh</div>Không để chữ màu tối trên các mảng nền đỏ đậm hoặc chữ trắng trên nền xám nhạt vì tỷ lệ tương phản thấp, gây khó đọc.</div>
+        <div class="do-card"><div class="tag">Do</div>Chừa khoảng trắng an toàn (clear space) quanh logo tối thiểu bằng 1 lần chiều cao icon cánh hoa.</div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng chữ trắng hoặc chữ nhạt màu trên nền vàng #FFCC00 — tương phản thấp, khó đọc.</li>
+            <li>Dùng chữ đỏ trên nền đỏ (dù khác sắc độ) cho các dòng quan trọng.</li>
+          </ul>
+        </div>
       </div>
+    </div>
+
+    <div class="angle-group-title">Thành phần đồ họa &amp; Tài nguyên (Visual Assets &amp; Elements)</div>
+
+    <div class="dodont-block">
+      <h4>Logo</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Giữ kích thước logo tối thiểu đảm bảo rõ nét trên mobile (chiều cao ≥24px trên feed).</li>
+            <li>Vị trí logo luôn phải đặt ở góc trên ảnh, ưu tiên đặt ở giữa ảnh.</li>
+            <li>Dùng shape đơn giản, bo góc nhẹ.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Đặt logo đè lên ảnh nền phức tạp hoặc sát mép khung hình.</li>
+            <li>Thu nhỏ logo tới mức mất chi tiết cánh hoa.</li>
+            <li>Để icon/chữ khác che khuất một phần logo.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Element đồ họa (Graphic Elements)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Icon đồng bộ cùng style.</li>
+            <li>Landmark chỉ là điểm nhấn.</li>
+            <li>Element hỗ trợ dẫn mắt về CTA/headline.</li>
+            <li>Sử dụng ảnh thật hoặc AI có chất lượng cao.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng shape 3D nặng.</li>
+            <li>Trộn icon line và icon 3D.</li>
+            <li>Biến landmark thành nhân vật chính.</li>
+            <li>Thêm element chỉ để "cho đẹp".</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Nhân vật / Hình stock người (Characters / Stock Photography)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Ưu tiên người châu Á gần gũi.</li>
+            <li>Màu ảnh đồng bộ với brand, tương phản vừa phải.</li>
+            <li>Ánh sáng tự nhiên.</li>
+            <li>Shadow nhẹ để tạo chiều sâu (opacity ≤20%, blur nhỏ).</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng ảnh AI lỗi da hoặc méo tay.</li>
+            <li>Dùng người mẫu mang cảm giác quá Tây nếu không cần thiết.</li>
+            <li>Dùng ảnh quá bão hòa màu.</li>
+            <li>Dùng filter HDR hoặc contrast quá mạnh.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Hiệu ứng (Effects)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Glow nhẹ quanh CTA hoặc headline.</li>
+            <li>Chỉ dùng blur khi cần tách lớp (background và foreground).</li>
+            <li>Mỗi layout chỉ nên có 1–2 điểm nhấn chính (số liệu, badge hoặc CTA).</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Dùng shadow đen dày.</li>
+            <li>Dùng lens flare hoặc light leak quá nhiều.</li>
+            <li>Lạm dụng blur.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Bố cục (Layout)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Chừa khoảng trắng đủ để mắt nghỉ (tối thiểu ~10% diện tích canvas).</li>
+            <li>Sử dụng lưới (Grid) để căn chỉnh.</li>
+            <li>CTA luôn nằm ở vị trí dễ nhìn.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Cố nhồi quá nhiều USP.</li>
+            <li>Nhồi kín toàn bộ canvas.</li>
+            <li>Đặt element lệch thiếu chủ đích.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="angle-group-title">Ứng dụng thực tế (Practical Applications &amp; Formats)</div>
+
+    <div class="dodont-block">
+      <h4>Thiết kế Carousel</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Các slide dùng cùng hệ background.</li>
+            <li>Màu chuyển tiếp tự nhiên.</li>
+            <li>Typography thống nhất.</li>
+            <li>Khoảng cách/lề giống nhau giữa các slide.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Để CTA chìm trong background.</li>
+            <li>Mỗi slide một phong cách khác nhau.</li>
+            <li>Slide đầu tối, slide sau sáng.</li>
+            <li>Font thay đổi giữa các slide.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="dodont-block">
+      <h4>Quảng cáo (Ads)</h4>
+      <div class="dodont-pair">
+        <div class="do-card">
+          <div class="tag">Do</div>
+          <ul>
+            <li>Headline tập trung một thông điệp.</li>
+            <li>Tối đa 3 USP.</li>
+            <li>CTA rõ ràng, 1 CTA / creative.</li>
+            <li>Đọc hiểu trong 3 giây đầu.</li>
+          </ul>
+        </div>
+        <div class="dont-card">
+          <div class="tag">Don't</div>
+          <ul>
+            <li>Liệt kê quá nhiều lợi ích.</li>
+            <li>Đưa cả đoạn văn lên visual.</li>
+            <li>Quá nhiều badge, icon hoặc sticker.</li>
+            <li>Dùng màu đỏ quá nặng gây cảm giác cảnh báo.</li>
+          </ul>
+        </div>
+      </div>
+      <p style="font-size:12px;color:var(--gray-600);font-style:italic;margin-top:10px;">Gợi ý: Headline ≤ 6 từ, 1 CTA duy nhất.</p>
     </div>
   </div>
+
 
   <div class="section">
     <div class="section-head"><h2>Ví dụ áp dụng</h2></div>
@@ -3070,6 +3374,29 @@
     head.addEventListener('click', ()=>{
       head.closest('.expand-card').classList.toggle('open');
     });
+  });
+
+  // profile drawer (persona / buying group / niche group)
+  const drawerOverlay = document.getElementById('drawer-overlay');
+  function closeAllDrawers(){
+    document.querySelectorAll('.drawer.open').forEach(d=>d.classList.remove('open'));
+    if(drawerOverlay) drawerOverlay.classList.remove('open');
+  }
+  document.querySelectorAll('[data-drawer]').forEach(trigger=>{
+    trigger.addEventListener('click', ()=>{
+      const id = trigger.getAttribute('data-drawer');
+      const drawer = document.getElementById(id);
+      if(!drawer) return;
+      closeAllDrawers();
+      drawer.classList.add('open');
+      if(drawerOverlay) drawerOverlay.classList.add('open');
+    });
+  });
+  document.querySelectorAll('[data-close-drawer]').forEach(btn=>{
+    btn.addEventListener('click', closeAllDrawers);
+  });
+  document.addEventListener('keydown', (e)=>{
+    if(e.key === 'Escape') closeAllDrawers();
   });
 </script>
 
